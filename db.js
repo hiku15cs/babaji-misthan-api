@@ -19,4 +19,11 @@ async function connectCollectionMilkEntry() {
     return db.collection("milk_entries");
   }
 
-module.exports = { connectDB, connectCollectionMilkEntry };
+  async function connectCollectionChhenaEntry() {
+    await client.connect();
+    console.log("Connected to MongoDB");
+    const db = client.db();
+    return db.collection("chhena_entries");
+  }
+
+module.exports = { connectDB, connectCollectionMilkEntry, connectCollectionChhenaEntry };
